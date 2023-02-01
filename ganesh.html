@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        header{
+        width: 100vw;
+        height: 5vh;
+        background-color: rgb(233, 230, 41);
+        }
+
+        main{
+            position: relative;
+            width: 100vw;
+            height: 95vh;
+            background-color: rgb(233, 231, 106);
+        }
+        .photo
+        {
+            position: absolute;
+            width: 500px;
+            height: 600px;
+            left: 515px;
+            top: 20px;
+        }
+        .ghanti{
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background-color: rgb(244, 112, 60);
+            top: 150px;
+            left: 100px;
+        }
+        .dhoop{
+            position: absolute;
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            background-color: rgb(244, 112, 60);
+            top: 300px;
+            left: 100px;
+            padding: 15px;
+        }
+        .phool{
+            position: absolute;
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            background-color: rgb(244, 112, 60);
+            top: 450px;
+            left: 100px;
+            padding: 15px;
+        }
+        .shank{
+            position: absolute;
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            background-color: rgb(244, 112, 60);
+            top: 150px;
+            right: 100px;
+            padding: 15px;
+        }
+        .dia{
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background-color: rgb(244, 112, 60);
+            top: 300px;
+            right: 100px;
+        }
+        .aarti{
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background-color: rgb(244, 112, 60);
+            top: 450px;
+            left: 100px;
+        }
+        .pause{
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background-color: rgb(244, 112, 60);
+            top: 450px;
+            right: 100px;
+        }
+        .ghanti:hover, .dhoop:hover, .phool:hover, .shank:hover, .dia:hover, .aarti:hover, .pause:hover{
+            box-shadow: 0px 0px 20px 15px rgb(48, 223, 223);
+            transform: scale(0.95);
+        }
+        #bell1{
+            position: absolute;
+            left: 250px;
+            animation-name: none;
+            animation-duration: 2.5s;
+            animation-iteration-count: 4;
+        }
+        #bell2{
+            position: absolute;
+            left: 380px;
+            animation-name: none;
+            animation-duration: 2s;
+            animation-iteration-count: 5;
+        }
+        #bell3{
+            position: absolute;
+            right: 380px;
+            animation-name: none;
+            animation-duration: 2s;
+            animation-iteration-count: 5;
+        }
+        #bell4{
+            position: absolute;
+            right: 250px;
+            animation-name: none;
+            animation-duration: 2.5s;
+            animation-iteration-count: 4;
+        }
+        @keyframes move {
+            0%{ transform: rotate(-30deg);}
+            50%{ transform: rotate(30deg);}
+            100%{ transform: rotate(-30deg);}
+        }
+        #agar{
+            position: absolute;
+            top: 530px;
+            left: 900px;
+            animation-name: none;
+            animation-duration: 15s;
+            transform: rotate(-20deg);
+            animation-iteration-count: 2;
+            animation-timing-function: linear;
+            display: none;
+        }
+        @keyframes agaar {
+            0%{ transform: translate(0px,0px) rotate(-20deg);}
+            20%{ transform: translate(-300px,0px) rotate(-20deg);}
+            25%{ transform: translate(-400px,-100px) rotate(-20deg);}
+            45%{ transform: translate(-400px,-500px) rotate(-20deg);}
+            50%{ transform: translate(-350px,-550px) rotate(-20deg);}
+            70%{ transform: translate(50px,-550px) rotate(-20deg);}
+            75%{ transform: translate(100px,-500px) rotate(-20deg);}
+            95%{ transform: translate(100px,-50px) rotate(-20deg);}
+            100%{ transform: translate(0px,0px) rotate(-20deg);}
+        }
+    </style>
+</head>
+<body>
+    <header>
+
+    </header>
+    <main>
+        <div class="photo"><img src="ganesh.png" height="100%"  width="100%"></div>
+        <div class="ghanti" onclick="move()"><img src="bell.png" height="100%"  width="110%"></div>
+        <div class="dhoop" onclick="round()"><img src="dhop.png" height="100%"  width="100%"></div>
+        <div class="phool" style="display:none;"><img src="phul.png" height="100%"  width="100%"></div>
+        <div class="shank" onclick="shankh.play()"><img src="shankh.png" height="100%"  width="100%"></div>
+        <div class="dia" onclick="showdia()"><img src="dia.png" height="100%"  width="100%"></div>
+        <div class="aarti" onclick="sound.play()"><img src="play.png" height="100%"  width="100%"></div>
+        <div class="pause" id="pau" onclick="sound.pause()"><img src="pause.png" height="100%"  width="100%"></div>
+        <div id="bell1"><img src="bell.png" width="120px"></div>
+        <div id="bell2"><img src="bell.png" width="170px"></div>
+        <div id="bell3"><img src="bell.png" width="170px"></div>
+        <div id="bell4"><img src="bell.png" width="120px"></div>
+        <div id="agar"><img src="dhop.png" width="100px"></div>
+        <div id="dia1" style="width:4vw; height:4vw; position:absolute; bottom:40px; left:450px; display:none;"><img src="dia.png" width="100%" height="100%"></div>
+        <div id="dia2" style="width:4vw; height:4vw; position:absolute; bottom:40px; left:600px; display:none;"><img src="dia.png" width="100%" height="100%"></div>
+        <div id="dia3" style="width:6vw; height:6vw; position:absolute; bottom:40px; left:730px; display:none;"><img src="dia.png" width="100%" height="100%"></div>
+        <div id="dia4" style="width:4vw; height:4vw; position:absolute; bottom:40px; left:900px; display:none;"><img src="dia.png" width="100%" height="100%"></div>
+        <div id="dia5" style="width:4vw; height:4vw; position:absolute; bottom:40px; left:1050px; display:none;"><img src="dia.png" width="100%" height="100%"></div>
+    </main>
+    <script>
+        var sound = new Audio();
+        sound.src = "ganesh.mp3"
+
+        var shankh = new Audio();
+        shankh.src = "shankh.mp3";
+
+        function move(){
+            document.getElementById("bell1").style.animationName = "move";
+            document.getElementById("bell2").style.animationName = "move";
+            document.getElementById("bell3").style.animationName = "move";
+            document.getElementById("bell4").style.animationName = "move";
+        }
+        function round(){
+            document.getElementById("agar").style.animationName = "agaar";
+            document.getElementById("agar").style.display = "block";
+        }
+        function showdia(){
+            document.getElementById("dia1").style.display = "block";
+            document.getElementById("dia2").style.display = "block";
+            document.getElementById("dia3").style.display = "block";
+            document.getElementById("dia4").style.display = "block";
+            document.getElementById("dia5").style.display = "block";
+        }
+    </script>
+</body>
+</html>

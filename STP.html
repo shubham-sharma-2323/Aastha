@@ -1,0 +1,1231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0vh 0.1vw;
+        }
+		
+		:root{
+		    --colour: radial-gradient(circle,rgb(245, 200, 116),rgb(250, 250, 121), rgb(245, 134, 134));
+			--textcolor: #ffc600;
+		}
+        .navbar{
+            border: 0px solid black;
+            width: 98vw;
+            height: 10vh;
+            background-image: var(--colour);
+        }
+
+        .navbar .aastha{
+            border: 0px solid black;
+            width: 20vw;
+            line-height: 10vh;
+            font-size: 3rem;
+            height: 100%;
+            float: left;
+            margin-left: 7vw;
+            color: white;
+            font-family: 'Times New Roman', Times, serif;
+            font-weight: 600;
+        }
+
+        .navbar .live{
+            border: 0px solid black;
+            width: 8vw;
+            height: 100%;
+            color: red;
+            font-weight: 900;
+            float: right;
+            line-height: 10vh;
+            font-size: 1.3rem;
+            text-align: center;
+            margin-right: 2vw;
+            transition-property: all;
+            transition-duration: 0.2s;
+        }
+        .navbar .live:hover{
+            background-color: rgba(29, 27, 27,0.7);
+            color: white;
+        }
+
+        .navbar .contact{
+            border: 0px solid black;
+            width: 9vw;
+            height: 100%;
+            color: red;
+            font-weight: 900;
+            float: right;
+            line-height: 10vh;
+            font-size: 1.3rem;
+            margin-right: 7vw;
+            text-align: center;
+            transition-property: all;
+            transition-duration: 0.5s;
+        }
+        .navbar .contact:hover{
+            background-color: rgba(29, 27, 27,0.7);
+            color: white;
+        }
+
+        .slider{
+            border: 0px solid black;
+            width: 98vw;
+            height: 60vh;
+            position:relative; 
+            margin: 5vh 0vw;
+        }
+
+        .slide{ display:none; }
+
+        .arrow{ 
+            position:absolute;
+            top:40vh;
+            background-color:rgba(241, 233, 229, 0.918);
+            font-size:30px; 
+            border-radius:50%;
+            padding:10px 16px;
+            font-weight:bold; 
+        }
+
+        .arrow:hover{ 
+            cursor: pointer; 
+        }
+
+        .prev{ left:10px; }
+
+        .next{ right:10px; }
+
+        .platform{
+            border: 0px solid black;
+			margin:2vh 4.5vw;
+            width: 90vw;
+            height: 70vh;
+			background-image: url(click.png);
+			background-size: 100% 100%;
+			background-repeat:no-repeat;
+        }
+
+        .contact{
+            border: 0px solid black;
+            width: 98vw;
+            height: 50vh;
+        }
+        
+        .in1{ width:40%;
+            border:0px solid black;
+			background-image:url(contact.jpg);
+            background-size:cover;
+            height:100%;
+            float:left;	 }
+            
+        .in2{ width:59.5%;
+            border:0px solid black;
+            height:88%;
+            float:left;
+            text-align:center;
+            padding: 3vh 0vw;	 }
+            
+        .in2 h1{ font-family: montserrat, sans-serif;
+              color:var(--textcolor);			}
+			  
+		.in2 p{ font-family: montserrat, sans-serif;
+              color:var(--textcolor);			}
+	 
+        .foorm{ border: 0px solid black;
+            width:95%;
+            height:62%;
+            font-size:1.3rem;
+        	font-weight:600;
+            padding:3vh 1.5vw;
+            position:relative;
+            text-align:left;		 }
+		 
+        .span1{ position:absolute;
+            left:6vw;
+            color:var(--textcolor);		}
+		
+        .span2{ position:absolute;
+            left:36vw;
+            color:var(--textcolor); }	
+			
+        .span4{ position:absolute;
+            left:6vw;
+            color:var(--textcolor); }
+		
+        .name{ position:absolute;
+            left:5vw;
+            padding:0vh 1vw;
+            border:0px solid white;
+            border-radius:3vh;
+            width:17vw;	
+            height:4vh;
+            margin:1vh 0vw;	
+            font-size:1rem;		}
+		
+        .email{ position:absolute;
+            left:35vw;
+            padding:0vh 1vw;
+            width:17vw;	
+            height:4vh;
+            border:0px solid white;
+            border-radius:3vh;
+            font-size:1rem;	
+            margin:1vh 0vw;		}
+		
+        .message{ position:absolute;
+            left:5vw;
+            width:40vw;	
+            padding:1vh 1vw;
+            border:0px solid white;
+            border-radius:5vh;
+            height:8vh;
+            font-size:1rem;	
+            margin:1vh 0vw;		}
+        
+        input:focus { text-decoration:none;
+            border:3px solid rgba(55,0,109);}
+			  
+        textarea:focus { text-decoration:none;
+            border:3px solid rgba(55,0,109);}
+		
+        .butinn{ width:11vw;
+            height:6vh;
+			border:1px solid var(--textcolor);
+            border-radius: 2rem;
+		    position:absolute;
+		    top:30vh;
+		    left:24vw;
+	        background-color:var(--textcolor);
+            color:white;
+            font-size:1.2rem;
+            font-weight:600;	
+            transition-property:all;
+            transition-duration:0.3s;		}
+		
+        .butinn:hover{ background-color: white;
+            color: var(--textcolor); }
+            
+        .footer { 
+            width:99.5%;
+            height:35vh;
+            border:0px solid black;
+            position:relative;  
+        }
+        
+        .footer .aastha{ 
+            border: 0px solid black;
+            width: 15vw;
+            font-size: 3rem;
+            color: var(--textcolor);
+            font-family: 'Times New Roman', Times, serif;
+            font-weight: 600;
+            position:absolute;
+            left:3vw;
+            top:8vh;			
+        }
+			
+        .h31{ 
+            position:absolute;
+            color: var(--textcolor);
+            font-weight:500;
+            font-size:1.5rem;
+            top:10vh;
+            left:18vw; 
+        }
+
+        .h32{ 
+            position:absolute;
+            color: var(--textcolor);
+            font-weight:500;
+            font-size:1.5rem;
+            top:10vh;
+            left:40vw; 
+        }
+
+        .h33{ 
+            position:absolute;
+            color: var(--textcolor);
+            font-weight:500;
+            font-size:1.5rem;
+            top:10vh;
+            left:60vw; 
+        }
+
+        .h34{ 
+            position:absolute;
+            color: var(--textcolor);
+            font-weight:500;
+            font-size:1.5rem;
+            top:10vh;
+            left:75vw; 
+        }
+
+        .address{ 
+            position:absolute;
+            font-family: montserrat, sans-serif;
+            color: rgba(75, 85, 99,1);
+            font-weight:400;
+            font-size:0.8rem;
+            top:15vh;
+            text-align:left;
+            left:18vw; 
+        }
+
+        .emailll{ 
+            position:absolute;
+            font-family: montserrat, sans-serif;
+            color: rgba(75, 85, 99,1);
+            font-weight:400;
+            font-size:0.9rem;
+            top:15vh;
+            text-align:left;
+            left:40vw; 
+        }
+
+        .phone{ 
+            position:absolute;
+            font-family: montserrat, sans-serif;
+            color: rgba(75, 85, 99,1);
+            font-weight:400;
+            font-size:0.9rem;
+            top:15vh;
+            text-align:left;
+            left:60vw; 
+        }
+                        
+        .footer .img1{
+            position:absolute;
+            right:16vw;
+            top:15vh;
+            width:2.5vw;
+            height:2vw;
+            border:0px solid black; 
+        }
+
+        .footer .img2{
+            position:absolute;
+            right:20vw;
+            top:15vh;
+            width:2vw;
+            height:2vw;
+            border:0px solid black; 
+        }			
+
+        .hline{
+            width:100%;
+            height:1px;
+            color: rgba(75, 85, 99,1);
+            position:absolute;
+            top:25vh; 
+        }
+
+        .privacy{
+            font-family: montserrat, sans-serif;
+            color: rgba(75, 85, 99,1);
+            font-size:0.8rem;
+            position:absolute;
+            top: 26vh;
+            left:5vw; 
+        }
+
+        .terms{
+            font-family: montserrat, sans-serif;
+            color: rgba(75, 85, 99,1);
+            font-size:0.8rem;
+            position:absolute;
+            top: 26vh;
+            left:15vw; 
+        }
+
+        .copyright{
+            font-family: montserrat, sans-serif;
+            color: rgba(75, 85, 99,1);
+            font-size:1rem;
+            font-weight:600;
+            position:absolute;
+            top: 27vh;
+            right:3vw; 
+        }
+
+        @media only screen and (min-width: 980px) and (max-width:1250px){
+            .navbar .contact{
+            border: 0px solid black;
+            width: 10vw;
+            height: 100%;
+            color: red;
+            font-weight: 900;
+            float: right;
+            line-height: 10vh;
+            font-size: 1.3rem;
+            margin-right: 7vw;
+            text-align: center;
+            transition-property: all;
+            transition-duration: 0.5s;
+        }
+        }
+
+        @media only screen and (min-width: 580px) and (max-width:979px){
+            .navbar .contact{
+            border: 0px solid black;
+            width: 14vw;
+            height: 100%;
+            color: red;
+            font-weight: 900;
+            float: right;
+            line-height: 10vh;
+            font-size: 1rem;
+            margin-right: 7vw;
+            text-align: center;
+            transition-property: all;
+            transition-duration: 0.5s;
+        }
+
+        .navbar .live{
+            border: 0px solid black;
+            width: 8vw;
+            height: 100%;
+            color: red;
+            font-weight: 900;
+            float: right;
+            line-height: 10vh;
+            font-size: 1rem;
+            text-align: center;
+            margin-right: 2vw;
+            transition-property: all;
+            transition-duration: 0.2s;
+        }
+
+        .in1{ width:40%;
+            border:0px solid black;
+			background-image:url(contact.jpg);
+            background-size:cover;
+            height:100%;
+            float:left;	
+            display: none; 
+        }
+
+        .in2{ width:100%;
+            border:1px solid black;
+            height:88%;
+            float:left;
+            text-align:center;
+            padding: 3vh 0vw;	 }
+
+        .span1{ position:absolute;
+            left:25vw;
+            color:var(--textcolor);		}
+		
+        .span2{ position:absolute;
+            left: 60vw;
+            color:var(--textcolor); }	
+			
+        .span4{ position:absolute;
+            left:25vw;
+            color:var(--textcolor); }
+		
+        .name{ position:absolute;
+            left:23vw;
+            padding:0vh 1vw;
+            border:0px solid white;
+            border-radius:3vh;
+            width:17vw;	
+            height:4vh;
+            margin:1vh 0vw;	
+            font-size:1rem;		}
+		
+        .email{ position:absolute;
+            left:58vw;
+            padding:0vh 1vw;
+            width:17vw;	
+            height:4vh;
+            border:0px solid white;
+            border-radius:3vh;
+            font-size:1rem;	
+            margin:1vh 0vw;		}
+		
+        .message{ position:absolute;
+            left:23vw;
+            width:40vw;	
+            padding:1vh 1vw;
+            border:0px solid white;
+            border-radius:5vh;
+            height:8vh;
+            font-size:1rem;	
+            margin:1vh 0vw;		}
+
+        .butinn{ width:18vw;
+            height:6vh;
+			border:1px solid var(--textcolor);
+            border-radius: 2rem;
+		    position:absolute;
+		    top:30vh;
+		    left:40vw;
+	        background-color:var(--textcolor);
+            color:white;
+            font-size:1.2rem;
+            font-weight:600;	
+            transition-property:all;
+            transition-duration:0.3s;		}
+
+        .footer .aastha{ 
+            border: 0px solid black;
+            width: 15vw;
+            font-size: 2.5rem;
+            color: var(--textcolor);
+            font-family: 'Times New Roman', Times, serif;
+            font-weight: 600;
+            position:absolute;
+            left:3vw;
+            top:8vh;			
+        }
+			
+        .h31{ 
+            position:absolute;
+            color: var(--textcolor);
+            font-weight:500;
+            font-size:1.2rem;
+            top:10vh;
+            left:25vw; 
+        }
+
+        .h32{ 
+            position:absolute;
+            color: var(--textcolor);
+            font-weight:500;
+            font-size:1.2rem;
+            top:10vh;
+            left:47vw; 
+        }
+
+        .h33{ 
+            position:absolute;
+            color: var(--textcolor);
+            font-weight:500;
+            font-size:1.2rem;
+            top:10vh;
+            left:67vw; 
+        }
+
+        .h34{ 
+            position:absolute;
+            color: var(--textcolor);
+            font-weight:500;
+            font-size:1.2rem;
+            top:10vh;
+            left:82vw; 
+        }
+
+        .address{ 
+            position:absolute;
+            font-family: montserrat, sans-serif;
+            color: rgba(75, 85, 99,1);
+            font-weight:400;
+            font-size:0.5rem;
+            top:15vh;
+            text-align:left;
+            left:25vw; 
+        }
+
+        .emailll{ 
+            position:absolute;
+            font-family: montserrat, sans-serif;
+            color: rgba(75, 85, 99,1);
+            font-weight:400;
+            font-size:0.6rem;
+            top:15vh;
+            text-align:left;
+            left:47vw; 
+        }
+
+        .phone{ 
+            position:absolute;
+            font-family: montserrat, sans-serif;
+            color: rgba(75, 85, 99,1);
+            font-weight:400;
+            font-size:0.6rem;
+            top:15vh;
+            text-align:left;
+            left:67vw; 
+        }
+                        
+        .footer .img1{
+            position:absolute;
+            right:10vw;
+            top:15vh;
+            width:2.5vw;
+            height:2vw;
+            border:0px solid black; 
+        }
+
+        .footer .img2{
+            position:absolute;
+            right:14vw;
+            top:15vh;
+            width:2vw;
+            height:2vw;
+            border:0px solid black; 
+        }			
+
+        .hline{
+            width:100%;
+            height:1px;
+            color: rgba(75, 85, 99,1);
+            position:absolute;
+            top:25vh; 
+        }
+
+        .privacy{
+            font-family: montserrat, sans-serif;
+            color: rgba(75, 85, 99,1);
+            font-size:0.5rem;
+            position:absolute;
+            top: 26vh;
+            left:5vw; 
+        }
+
+        .terms{
+            font-family: montserrat, sans-serif;
+            color: rgba(75, 85, 99,1);
+            font-size:0.5rem;
+            position:absolute;
+            top: 26vh;
+            left:15vw; 
+        }
+
+        .copyright{
+            font-family: montserrat, sans-serif;
+            color: rgba(75, 85, 99,1);
+            font-size:0.8rem;
+            font-weight:600;
+            position:absolute;
+            top: 27vh;
+            right:3vw; 
+        }
+        }
+
+        @media only screen and (min-width: 401px) and (max-width:579px){
+            .navbar .aastha{
+            border: 0px solid black;
+            width: 20vw;
+            line-height: 10vh;
+            font-size: 2.4rem;
+            height: 100%;
+            float: left;
+            margin-left: 7vw;
+            color: white;
+            font-family: 'Times New Roman', Times, serif;
+            font-weight: 600;
+        }
+        
+        .navbar .contact{
+            border: 0px solid black;
+            width: 20vw;
+            height: 100%;
+            color: red;
+            font-weight: 900;
+            float: right;
+            line-height: 10vh;
+            font-size: 1rem;
+            margin-right: 7vw;
+            text-align: center;
+            transition-property: all;
+            transition-duration: 0.5s;
+        }
+
+        .navbar .live{
+            border: 0px solid black;
+            width: 8vw;
+            height: 100%;
+            color: red;
+            font-weight: 900;
+            float: right;
+            line-height: 10vh;
+            font-size: 1rem;
+            text-align: center;
+            margin-right: 2vw;
+            transition-property: all;
+            transition-duration: 0.2s;
+        }
+
+        .in1{ width:40%;
+            border:0px solid black;
+			background-image:url(contact.jpg);
+            background-size:cover;
+            height:100%;
+            float:left;	
+            display: none; 
+        }
+
+        .in2{ width:100%;
+            border:1px solid black;
+            height:88%;
+            float:left;
+            text-align:center;
+            padding: 3vh 0vw;	 }
+
+        .span1{ position:absolute;
+            left:20vw;
+            color:var(--textcolor);		}
+		
+        .span2{ position:absolute;
+            left: 55vw;
+            color:var(--textcolor); }	
+			
+        .span4{ position:absolute;
+            left:20vw;
+            color:var(--textcolor); }
+		
+        .name{ position:absolute;
+            left:18vw;
+            padding:0vh 1vw;
+            border:0px solid white;
+            border-radius:3vh;
+            width:17vw;	
+            height:4vh;
+            margin:1vh 0vw;	
+            font-size:1rem;		}
+		
+        .email{ position:absolute;
+            left:53vw;
+            padding:0vh 1vw;
+            width:17vw;	
+            height:4vh;
+            border:0px solid white;
+            border-radius:3vh;
+            font-size:1rem;	
+            margin:1vh 0vw;		}
+		
+        .message{ position:absolute;
+            left:18vw;
+            width:40vw;	
+            padding:1vh 1vw;
+            border:0px solid white;
+            border-radius:5vh;
+            height:8vh;
+            font-size:1rem;	
+            margin:1vh 0vw;		}
+
+        .butinn{ width:25vw;
+            height:6vh;
+			border:1px solid var(--textcolor);
+            border-radius: 2rem;
+		    position:absolute;
+		    top:30vh;
+		    left:35vw;
+	        background-color:var(--textcolor);
+            color:white;
+            font-size:1.2rem;
+            font-weight:600;	
+            transition-property:all;
+            transition-duration:0.3s;		}
+
+        .footer .aastha{ 
+            border: 0px solid black;
+            width: 15vw;
+            font-size: 1.8rem;
+            color: var(--textcolor);
+            font-family: 'Times New Roman', Times, serif;
+            font-weight: 600;
+            position:absolute;
+            left:3vw;
+            top:8vh;			
+        }
+			
+        .h31{ 
+            position:absolute;
+            color: var(--textcolor);
+            font-weight:500;
+            font-size:0.8rem;
+            top:10vh;
+            left:25vw; 
+        }
+
+        .h32{ 
+            position:absolute;
+            color: var(--textcolor);
+            font-weight:500;
+            font-size:0.8rem;
+            top:10vh;
+            left:47vw; 
+        }
+
+        .h33{ 
+            position:absolute;
+            color: var(--textcolor);
+            font-weight:500;
+            font-size:0.8rem;
+            top:10vh;
+            left:67vw; 
+        }
+
+        .h34{ 
+            position:absolute;
+            color: var(--textcolor);
+            font-weight:500;
+            font-size:0.8rem;
+            top:10vh;
+            left:82vw; 
+        }
+
+        .address{ 
+            position:absolute;
+            font-family: montserrat, sans-serif;
+            color: rgba(75, 85, 99,1);
+            font-weight:400;
+            font-size:0.3rem;
+            top:15vh;
+            text-align:left;
+            left:25vw; 
+        }
+
+        .emailll{ 
+            position:absolute;
+            font-family: montserrat, sans-serif;
+            color: rgba(75, 85, 99,1);
+            font-weight:400;
+            font-size:0.3rem;
+            top:15vh;
+            text-align:left;
+            left:47vw; 
+        }
+
+        .phone{ 
+            position:absolute;
+            font-family: montserrat, sans-serif;
+            color: rgba(75, 85, 99,1);
+            font-weight:400;
+            font-size:0.3rem;
+            top:15vh;
+            text-align:left;
+            left:67vw; 
+        }
+                        
+        .footer .img1{
+            position:absolute;
+            right:10vw;
+            top:15vh;
+            width:1.8vw;
+            height:1.2vw;
+            border:0px solid black; 
+        }
+
+        .footer .img2{
+            position:absolute;
+            right:14vw;
+            top:15vh;
+            width:1.2vw;
+            height:1.2vw;
+            border:0px solid black; 
+        }			
+
+        .hline{
+            width:100%;
+            height:1px;
+            color: rgba(75, 85, 99,1);
+            position:absolute;
+            top:25vh; 
+        }
+
+        .privacy{
+            font-family: montserrat, sans-serif;
+            color: rgba(75, 85, 99,1);
+            font-size:0.4rem;
+            position:absolute;
+            top: 26vh;
+            left:5vw; 
+        }
+
+        .terms{
+            font-family: montserrat, sans-serif;
+            color: rgba(75, 85, 99,1);
+            font-size:0.4rem;
+            position:absolute;
+            top: 26vh;
+            left:15vw; 
+        }
+
+        .copyright{
+            font-family: montserrat, sans-serif;
+            color: rgba(75, 85, 99,1);
+            font-size:0.5rem;
+            font-weight:600;
+            position:absolute;
+            top: 27vh;
+            right:3vw; 
+        }
+        }
+
+        @media only screen and (min-width: 0px) and (max-width: 400px){
+            .navbar .aastha{
+            border: 0px solid black;
+            width: 20vw;
+            line-height: 10vh;
+            font-size: 2rem;
+            height: 100%;
+            float: left;
+            margin-left: 7vw;
+            color: white;
+            font-family: 'Times New Roman', Times, serif;
+            font-weight: 600;
+        }
+        
+        .navbar .contact{
+            border: 0px solid black;
+            width: 30vw;
+            height: 100%;
+            color: red;
+            font-weight: 900;
+            float: right;
+            line-height: 10vh;
+            font-size: 1rem;
+            margin-right: 10vw;
+            text-align: center;
+            transition-property: all;
+            transition-duration: 0.5s;
+        }
+
+        .navbar .live{
+            border: 0px solid black;
+            width: 8vw;
+            height: 100%;
+            color: red;
+            font-weight: 900;
+            float: right;
+            line-height: 10vh;
+            font-size: 1rem;
+            text-align: center;
+            margin-right: 2vw;
+            transition-property: all;
+            transition-duration: 0.2s;
+        }
+
+        .contact{
+            border: 0px solid black;
+            width: 98vw;
+            height: 70vh;
+        }
+
+        .in1{ width:40%;
+            border:0px solid black;
+			background-image:url(contact.jpg);
+            background-size:cover;
+            height:100%;
+            float:left;	
+            display: none; 
+        }
+
+        .in2{ width:98%;
+            border:1px solid black;
+            height:100%;
+            float:left;
+            text-align:center;
+            padding: 3vh 1vw;	 }
+
+        .span1{ position:absolute;
+            left:40vw;
+            color:var(--textcolor);		}
+		
+        .span2{ position:absolute;
+            left: 40vw;
+            top:15vh;
+            color:var(--textcolor); }	
+			
+        .span4{ position:absolute;
+            left:40vw;
+            top: 30vh;
+            color:var(--textcolor); }
+		
+        .name{ position:absolute;
+            left:30vw;
+            padding:0vh 1vw;
+            border:0px solid white;
+            border-radius:3vh;
+            width:17vw;	
+            height:4vh;
+            margin:1vh 0vw;	
+            font-size:1rem;		}
+		
+        .email{ position:absolute;
+            left:30vw;
+            top:20vh;
+            padding:0vh 1vw;
+            width:17vw;	
+            height:4vh;
+            border:0px solid white;
+            border-radius:3vh;
+            font-size:1rem;	
+            margin:1vh 0vw;		}
+		
+        .message{ position:absolute;
+            left:30vw;
+            top:35vh;
+            width:40vw;	
+            padding:1vh 1vw;
+            border:0px solid white;
+            border-radius:5vh;
+            height:8vh;
+            font-size:1rem;	
+            margin:1vh 0vw;		}
+
+        .butinn{ width:50vw;
+            height:8vh;
+			border:1px solid var(--textcolor);
+            border-radius: 2rem;
+		    position:absolute;
+		    top:50vh;
+		    left:25vw;
+	        background-color:var(--textcolor);
+            color:white;
+            font-size:1.2rem;
+            font-weight:600;	
+            transition-property:all;
+            transition-duration:0.3s;		}
+
+        .footer { 
+            width:99.5%;
+            height:60vh;
+            border:0px solid black;
+            position:relative;  
+        }
+
+        .footer .aastha{ 
+            border: 0px solid black;
+            width: 15vw;
+            font-size: 1.8rem;
+            color: var(--textcolor);
+            font-family: 'Times New Roman', Times, serif;
+            font-weight: 600;
+            position:absolute;
+            left:3vw;
+            top:8vh;	
+            display: none;		
+        }
+			
+        .h31{ 
+            position:absolute;
+            color: var(--textcolor);
+            font-weight:500;
+            font-size:1.5rem;
+            top:10vh;
+            left:5vw; 
+        }
+
+        .h32{ 
+            position:absolute;
+            color: var(--textcolor);
+            font-weight:500;
+            font-size:1.5rem;
+            top:10vh;
+            left:60vw; 
+        }
+
+        .h33{ 
+            position:absolute;
+            color: var(--textcolor);
+            font-weight:500;
+            font-size:1.5rem;
+            top:22vh;
+            left:5vw; 
+        }
+
+        .h34{ 
+            position:absolute;
+            color: var(--textcolor);
+            font-weight:500;
+            font-size:1.5rem;
+            top:22vh;
+            left:60vw; 
+        }
+
+        .address{ 
+            position:absolute;
+            font-family: montserrat, sans-serif;
+            color: rgba(75, 85, 99,1);
+            font-weight:400;
+            font-size:0.6rem;
+            top:15vh;
+            text-align:left;
+            left:5vw; 
+        }
+
+        .emailll{ 
+            position:absolute;
+            font-family: montserrat, sans-serif;
+            color: rgba(75, 85, 99,1);
+            font-weight:400;
+            font-size:0.8rem;
+            top:15vh;
+            text-align:left;
+            left:60vw; 
+        }
+
+        .phone{ 
+            position:absolute;
+            font-family: montserrat, sans-serif;
+            color: rgba(75, 85, 99,1);
+            font-weight:400;
+            font-size:0.8rem;
+            top:27vh;
+            text-align:left;
+            left:5vw; 
+        }
+                        
+        .footer .img1{
+            position:absolute;
+            right:30vw;
+            top:28vh;
+            width:7vw;
+            height:6vw;
+            border:0px solid black; 
+        }
+
+        .footer .img2{
+            position:absolute;
+            right:20vw;
+            top:28vh;
+            width:6vw;
+            height:6vw;
+            border:0px solid black; 
+        }			
+
+        .hline{
+            width:100%;
+            height:1px;
+            color: rgba(75, 85, 99,1);
+            position:absolute;
+            top:40vh; 
+        }
+
+        .privacy{
+            font-family: montserrat, sans-serif;
+            color: rgba(75, 85, 99,1);
+            font-size:1rem;
+            position:absolute;
+            top: 42vh;
+            left:5vw; 
+        }
+
+        .terms{
+            font-family: montserrat, sans-serif;
+            color: rgba(75, 85, 99,1);
+            font-size:1rem;
+            position:absolute;
+            top: 46vh;
+            left:5vw; 
+        }
+
+        .copyright{
+            font-family: montserrat, sans-serif;
+            color: rgba(75, 85, 99,1);
+            font-size:1.1rem;
+            font-weight:600;
+            position:absolute;
+            top: 53vh;
+            right:3vw; 
+        }
+        }
+
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <a href="STP.html"><div class="aastha">Aastha</div></a>
+        <a href="#contact"><div class="contact">Contact Us</div></a>
+        <a href="synopsis.html"><div class="live">Live</div></a>
+    </div>
+
+    <div class="slider">
+        <div class="slide">
+            <img src="slide1.png" style="width:98vw; height:60vh;" alt="image 1">
+        </div>
+        <div class="slide">
+            <img src="slide2.png" style="width:98vw; height:60vh;" alt="image 2">
+        </div>
+        <div class="slide">
+            <img src="slide3.png" style="width:98vw; height:60vh;" alt="image 3">
+        </div>
+        </div>
+        <span class="arrow prev" onclick="add(-1)">
+            &#10094;
+        </span>
+        <span class="arrow next" onclick="add(1)">
+            &#10095;
+        </span>
+    </div>
+
+    <a href="synopsis.html"><div class="platform"></div></a>
+	
+	<a name="contact">
+    <div class="contact">
+	    <div class="in1"></div>
+	    <div class="in2">
+		  <h1>Contact Us</h1>
+		  <p>Feel free to reach us anytime! We'll be more happy to help</p>
+		  <div class="foorm">
+		  <form method="POST">
+		    <span class="span1">Name:</span> 
+			<span class="span2">Email:</span>
+			<br/>
+			<input type="text" class="name" name="name" placeholder=" Enter your name"/>
+			<input type="email" class="email" name="email" placeholder=" Enter your email"/>
+			<br/><br/>
+			<span class="span4">Message:</span> 
+			<br/>
+			<textarea cols="10" rows="10" class="message" name="message" placeholder=" Enter your message"></textarea>
+			<button class="butinn">Submit</button>
+		  </form>
+		</div>
+		</div>
+	</div>
+	</a>
+	
+	<div class="footer">
+	    <a href="STP.html"><h1 class="aastha">Aastha</h1></a>
+	    <h3 class="h31">Address</h3>
+		<p class="address">BPIT, PSP-4, Dr KN Katju Marg, <br>Sector 17, Rohini, Delhi 110089</p>
+		<h3 class="h32">Email</h3>
+		<p class="emailll">aastha@gmail.com</p>
+		<h3 class="h33">Phone</h3>
+		<p class="phone">+91 84689-66151<br/>  +91 77039-99987</p>
+		<h3 class="h34">Follow Us</h3>
+		<a href="#"><img src="youtube.png" class="img1"></a>
+		<a href="#"><img src="insta.png" class="img2"></a>
+	    <hr class="hline" />
+		<p class="privacy">Privacy Policy</p>
+		<p class="terms">Terms & Conditions</p>
+		<p class="copyright">© 2023 - Aastha All Right Reserved</p>
+	</div>
+
+    <script>
+        let flag=0;
+        sliding(flag);
+        function add(n)
+        {
+          flag=flag+n;
+          sliding(flag);
+        }
+        function sliding(num)
+        {
+          let sl=document.getElementsByClassName("slide");
+          if(num==sl.length)
+          {
+            num=0;
+            flag=0;
+          }
+          if(num<0)
+          {
+            num=sl.length-1;
+            flag=sl.length-1;
+          }
+          for(let y of sl){ y.style.display="none"; }
+          sl[num].style.display="block";
+        }
+    </script>
+</body>
+</html>
